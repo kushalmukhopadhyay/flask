@@ -29,3 +29,14 @@ Commit: d21c93144e6e9a60e0d05783eb327970de5a2310
 - No FP count can be established from the summary alone.
 - This is a small, hand-built benchmark—not a general accuracy estimate.
 - Do not merge benchmark PRs.
+
+## Latest Review Check — 2026-10-11
+
+Reviewed commit: 3fbc03a8dda4684d556da247808a6c04c248d12f
+
+- Cases 1, 2, 4, 5, and 7 were detected again.
+- Cases 8 (broad exception handling) and 10 (empty-list edge case) were not flagged.
+- Cases 3 and 9 remain unscored pending explicit contracts.
+- Case 6 remains excluded because its credential is intentionally fake.
+- Persistent review state contains duplicate findings across runs; deduplicate by issue and location before counting.
+- This re-review is not an independent benchmark sample.
