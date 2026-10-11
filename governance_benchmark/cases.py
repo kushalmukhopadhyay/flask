@@ -38,3 +38,35 @@ def read_first_line(path):
     # Case 7: File is opened without a context manager.
     handle = open(path, encoding="utf-8")
     return handle.readline()
+
+
+def parse_port(value):
+    # Case 3: Expected invalid input is not handled.
+    return int(value)
+
+
+def read_config(path):
+    # Case 8: Broad exception handling hides the underlying failure.
+    try:
+        with open(path, encoding="utf-8") as handle:
+            return handle.read()
+    except Exception:
+        return None
+
+
+def calculate_total(price, quantity, discount):
+    # Case 9: Inconsistent discount rate compared with calculate_invoice_total.
+    if discount:
+        return price * quantity * 0.9
+    return price * quantity
+
+
+def calculate_invoice_total(price, quantity, discount):
+    if discount:
+        return price * quantity * 0.85
+    return price * quantity
+
+
+def first_item(items):
+    # Case 10: Empty-list edge case is not handled.
+    return items[0]
